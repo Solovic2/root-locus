@@ -1,7 +1,7 @@
 # Root Locus (Graphical Tool)
 
 <p align="center">
- <img src="/img/rl.png" alt="Drawing" style="width: 100px;"/>
+ <img src="/img/rl.png" width="460px"/>
 </p>
 
 This is a fun little weekend project I worked on for my *Modern Control* class. 
