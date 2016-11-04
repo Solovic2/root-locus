@@ -1,4 +1,8 @@
-# Root Locus (Graphical Tool) 
+# Root Locus (Graphical Tool)
+
+<p align="center">
+ <img src="/img/rl.png" alt="Drawing" style="width: 440px;"/>
+</p>
 
 This is a fun little weekend project I worked on for my *Modern Control* class. 
 
@@ -10,6 +14,31 @@ It is a python implementation of the Root Locus Design Method. The RL plots the 
 - numpy
 - matplotlib
 - seaborn (optional)
+
+## How To Use
+
+Enter the coefficients of the numerator and denominator of the open loop transfer function as lists `num = []` and `denum = []`. The denominator must have all coefficients entered (even the terms with 0 coefficients) but it doesn't have to be explicitely written out for the numerator.
+
+
+Now invoke the `transfer_function` method, compute the roots of the TF using `compute_roots`, and finally plot with `plot_root_locus`.
+
+**Example**
+
+```python
+num = [1]
+denum = [1, 3, 2, 0]
+
+GH = transfer_function(num, denum)
+
+# create a list of evenly spaced gains
+gains = np.linspace(0.0, 10.0, num=500)
+
+roots = compute_roots(GH, gains)
+real_vals = np.real(roots)
+imag_vals = np.imag(roots)
+fig, ax = plot_root_locus(gains, roots)
+plt.show()
+```
 
 ## References   
 
