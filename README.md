@@ -1,6 +1,6 @@
 # Root Locus (Graphical Tool) 
 
-This is a fun little weekend project I worked for my *Modern Control* class. 
+This is a fun little weekend project I worked on for my *Modern Control* class. 
 
 It is a python implementation of the Root Locus Design Method. The RL plots the location of the roots of the characteristic equation of the closed-loop transfer function as the gain K is varied from 0 to infinity. 
 
