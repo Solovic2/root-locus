@@ -115,24 +115,20 @@ def plot_root_locus(gains, roots):
 	# plot the rest of the roots in different colors with respect to the regions
 	for r, i, j in zip(temp_real_vals.T, temp_imag_vals.T, color_range):
 		ax.plot(r, i, color=colors[j])
-
-	# annotate the k values
-	for i, k in enumerate(gain_text):
-		ax.annotate(k, (real_vals[i,:], imag_vals[i,:]))
-
+		
 	return fig, ax
 
 if __name__ == "__main__":
-# open loop transfer function
-num = [1, 3.25]
-denum = [1, 9.5, 32, 44.5, 21]
-GH = transfer_function(num, denum)
+	# open loop transfer function
+	num = [1, 3.25]
+	denum = [1, 9.5, 32, 44.5, 21]
+	GH = transfer_function(num, denum)
 
-# create a list of evenly spaced gains
-gains = np.linspace(-10.0, 10.0, num=500)
+	# create a list of evenly spaced gains
+	gains = np.linspace(-10.0, 10.0, num=500)
 
-roots = compute_roots(GH, gains)
-real_vals = np.real(roots)
-imag_vals = np.imag(roots)
-fig, ax = plot_root_locus(gains, roots)
-plt.show()
+	roots = compute_roots(GH, gains)
+	real_vals = np.real(roots)
+	imag_vals = np.imag(roots)
+	fig, ax = plot_root_locus(gains, roots)
+	plt.show()
