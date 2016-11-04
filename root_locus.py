@@ -125,7 +125,7 @@ if __name__ == "__main__":
 	GH = transfer_function(num, denum)
 
 	# create a list of evenly spaced gains
-	gains = np.linspace(-10.0, 10.0, num=500)
+	gains = np.linspace(0.0, 10.0, num=500)
 
 	roots = compute_roots(GH, gains)
 	real_vals = np.real(roots)
