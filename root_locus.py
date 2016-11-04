@@ -89,8 +89,6 @@ def plot_root_locus(gains, roots):
 	# possible colors
 	colors = ['b', 'm', 'c', 'r', 'g']
 
-
-
 	# create figure and axis labels
 	fig, ax = plt.subplots()
 	ax.set_xlabel('Re')
@@ -99,16 +97,14 @@ def plot_root_locus(gains, roots):
 	ax.grid(True, which='both')
 
 	# plots a blue "x" for the first roots
-	ax.scatter(real_vals[0, :], 
-							imag_vals[0, :], 
-							marker='x', 
-							color='blue')
+	ax.scatter(real_vals[0, :], imag_vals[0, :], 
+					marker='x', 
+					color='blue')
 
 	# plots a red "o" for the last roots
-	ax.scatter(real_vals[-1, :],
-								imag_vals[-1, :],
-								marker='o',
-								color='red')
+	ax.scatter(real_vals[-1, :], imag_vals[-1, :],
+					marker='o',
+					color='red')
 
 	gain_text = ['k = {:1.2f}'.format(k) for k in gains]
 
@@ -126,19 +122,14 @@ def plot_root_locus(gains, roots):
 
 	return fig, ax
 
-# ========================================================================= #
-#								MAIN
-# ========================================================================= #
-
+if __name__ == "__main__":
 # open loop transfer function
-# num = [1]
-# denum = [1, 3, 2, 0]
 num = [1, 3.25]
 denum = [1, 9.5, 32, 44.5, 21]
 GH = transfer_function(num, denum)
 
 # create a list of evenly spaced gains
-gains = np.linspace(0.0, 10.0, num=500)
+gains = np.linspace(-10.0, 10.0, num=500)
 
 roots = compute_roots(GH, gains)
 real_vals = np.real(roots)
