@@ -128,7 +128,5 @@ if __name__ == "__main__":
 	gains = np.linspace(0.0, 10.0, num=500)
 
 	roots = compute_roots(GH, gains)
-	real_vals = np.real(roots)
-	imag_vals = np.imag(roots)
 	fig, ax = plot_root_locus(gains, roots)
 	plt.show()
