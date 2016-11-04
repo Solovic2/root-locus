@@ -6,7 +6,7 @@
 
 This is a fun little weekend project I worked on for my *Modern Control Theory* class. 
 
-It is a python implementation of the Root Locus Design Method. The RL plots the location of the roots of the characteristic equation of the closed-loop transfer function as the gain K is varied from 0 to infinity. 
+It is a python implementation of the [Root Locus](https://en.m.wikipedia.org/wiki/Root_locus) Design Method. The RL plots the location of the roots of the characteristic equation of the closed-loop transfer function as the gain K is varied from 0 to infinity. 
 
 ## Requirements
 
