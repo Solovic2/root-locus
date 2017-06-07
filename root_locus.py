@@ -4,19 +4,19 @@ import seaborn as sns
 
 def transfer_function(num, denum):
 	"""
-		Correctly pads the list of poles and zeros to give
-		adequate representation of the transfer function.
+	Correctly pads the list of poles and zeros to give
+	adequate representation of the transfer function.
 
-		Assume num is smaller than denum.
+	Assume num is smaller than denum.
 
-		Parameters:
-		-----------
-		- num: coefficients of the zeros [coeff_n, coeff_(n-1), ..., coeff_0]
-		- denun: coefficients of the poles: [coeff_n, coeff_(n-1), ..., coeff_0]
+	Parameters:
+	-----------
+	- num: coefficients of the zeros [coeff_n, coeff_(n-1), ..., coeff_0]
+	- denun: coefficients of the poles: [coeff_n, coeff_(n-1), ..., coeff_0]
 
-		Returns:
-		--------
-		- tf: 2D numpy array [num, denum]
+	Returns:
+	--------
+	- tf: 2D numpy array [num, denum]
 	"""
 	# cast as numpy arrays of type float
 	num = np.array(num, dtype=np.float64)
